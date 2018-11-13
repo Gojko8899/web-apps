@@ -35,5 +35,4 @@ function init2() {
 
 }
 
-export { init }
-export { init2 }
+export { init, init2 };
