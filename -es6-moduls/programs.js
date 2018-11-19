@@ -3,6 +3,7 @@ class Program {
 
         this.date = new Date();
         this.listOfMovies = [];
+        this.numOfMovies = 0;
 
 
     }
@@ -20,6 +21,9 @@ class Program {
 
     addMovie(movie) {
         this.listOfMovies.push(movie);
+
+        this.numOfMovies++;
+
     };
 
     getData() {
@@ -28,11 +32,11 @@ class Program {
         var programDuration = this.getProgramDuration();
         var dateStr = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear();
 
-        var outputStr = dateStr + ", program duration " + programDuration + "min\n";
+        var outputStr = dateStr + " num of movies " + this.numOfMovies + " " + " program duration " + programDuration + "min\n";
 
         for (var i = 0; i < movies.length; i++) {
             var movie = movies[i];
-            outputStr += "\t\t" + movie.getData() + "\n";
+            outputStr += "\t\t" + movie + "\n";
         }
 
         return outputStr;

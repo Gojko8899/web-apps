@@ -5,7 +5,12 @@ const length = $("#length");
 const movieList = $("#resdiv");
 
 const date = $("#datelbl");
-const progList = $("#progdiv")
+const progList = $("#progdiv");
+const select1 = $("#movlistdiv");
+const select2 = $('#proglistdiv');
+const add = $("#addMovieToProgram")
+
+
 
 
 export const Validate = () =>
@@ -44,6 +49,23 @@ export const DisplayProgram = program => {
     const para = $("<p></p>").text(program);
 
     progList.append(para);
+
+
+}
+
+export const addMovieToSelect = movie => {
+
+    const option = $("<option></option>").text(movie);
+
+
+    select1.append(option);
+
+}
+export const addProgramToList = program => {
+
+    const option1 = $("<option></option>").text(program);
+
+    select2.append(option1);
 
 
 }
