@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    margin: 0 0 10px 0;
+}
+
+h1 {
+    font-weight: 400;
+    text-align: center;
+    background-color: pink;
+    color: white;
+    padding: 20px;
+    box-shadow: 0px 10px 13px -7px #afafaf;
+    -webkit-box-shadow: 0px 10px 13px -7px #afafaf; 
+}
+
+.post {
+    background-color: #50596b;
+    color: white;
+    padding: 30px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    box-shadow: 0px 5px 13px -7px rgb(0, 0, 0);
+    -webkit-box-shadow: 0px 5px 13px -7px rgb(0, 0, 0);
+
+}
+
+article .title {
+    text-transform: capitalize;
+    margin: 10px 0 20px;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+.intro {
+    line-height: 1.5em;
+}
