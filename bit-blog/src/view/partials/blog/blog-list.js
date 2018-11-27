@@ -1,46 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { BlogItem } from './BlogItem';
+import { fetchPosts } from '../../../services/service'
+
+class BlogList extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            posts: []
+        };
+    }
+
+    componentDidMount() {
+
+        fetchPosts()
+            .then((niz) => { this.setState({ posts: niz }) });
+        // this.setState({ posts: [] })
 
 
-const BlogList = () => {
+    }
 
-    return (
-        <ul className="collection">
-            <li className="collection-item avatar">
-                <a className="title">Title</a>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                     took a galley of type and scrambled it to make a type specimen book. It has survived not only
-             five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised i</p>
+    render() {
 
-            </li>
-            <li className="collection-item avatar">
-                <a className="title">Title</a>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                     took a galley of type and scrambled it to make a type specimen book. It has survived not only
-             five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised i</p>
+        const oneListItem = this.state.posts.map(function (post, index) {
 
-            </li>
-            <li className="collection-item avatar">
-                <a className="title">Title</a>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                     took a galley of type and scrambled it to make a type specimen book. It has survived not only
-             five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised i</p>
+            if (index <= 5) {
 
-            </li>
-            <li className="collection-item avatar">
-                <a className="title">Title</a>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                     took a galley of type and scrambled it to make a type specimen book. It has survived not only
-             five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised i</p>
+                return <BlogItem title={post.title} text={post.body} />
 
-            </li>
-        </ul>
+            }
+        })
 
-    )
+        return (
+            <ul className="collection" >
+                {
+                    [
+                        <div>
+                            {oneListItem}
+                        </div>
 
+                    ]
+                }
+            </ul>
+
+        )
+    }
 }
+
 
 export { BlogList }
