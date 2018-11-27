@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 const MyHeader = () => {
 
@@ -7,14 +8,13 @@ const MyHeader = () => {
             <div className="nav-wrapper container">
                 <a href="#" className="brand-logo">BIT BLOG</a>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
-                    <li><a href="sass.html"></a>Home</li>
-                    <li><a href="badges.html">Authors</a></li>
-                    <li><a href="collapsible.html">About</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/authors">Authors</Link></li>
+                    <li><Link to="/about">About</Link></li>
                 </ul>
             </div>
         </nav>
     )
-
 }
 
 export { MyHeader }

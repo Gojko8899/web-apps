@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Rados = () => {
+const BlogList = () => {
 
     return (
         <ul className="collection">
@@ -43,4 +43,4 @@ const Rados = () => {
 
 }
 
-export { Rados }
+export { BlogList }
